@@ -7,5 +7,12 @@ app.config["SECRET_KEY"] = "thisisasupersecretpassword1!"
 
 db = MongoEngine(app)
 
+def register_blueprints(app):
+    # Prevents circular imports
+    from app.views import posts
+    app.register_blueprint(posts)
+
+register_blueprints(app)
+
 if __name__ == '__main__':
     app.run()
