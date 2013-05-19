@@ -19,6 +19,7 @@ class List(MethodView):
 
 
 class Detail(MethodView):
+
     decorators = [requires_auth]
 
     def get_context(self, slug=None):
@@ -27,9 +28,9 @@ class Detail(MethodView):
         if slug:
             post = Post.objects.get_or_404(slug=slug)
             if request.method == 'POST':
-                form = form_cls(request.form, initial=post._data)
+                form = form_cls(request.form, inital=post._data)
             else:
-                form = form_cls(obj=form)
+                form = form_cls(obj=post)
         else:
             post = Post()
             form = form_cls(request.form)
@@ -57,7 +58,8 @@ class Detail(MethodView):
             return redirect(url_for('admin.index'))
         return render_template('admin/detail.html', **context)
 
-# Register the URLs
+
+# Register the urls
 admin.add_url_rule('/admin/', view_func=List.as_view('index'))
 admin.add_url_rule('/admin/create/', defaults={'slug': None}, view_func=Detail.as_view('create'))
 admin.add_url_rule('/admin/<slug>/', view_func=Detail.as_view('edit'))
