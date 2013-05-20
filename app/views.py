@@ -5,6 +5,7 @@ from flask.ext.mongoengine.wtf import model_form
 
 posts = Blueprint('posts', __name__, template_folder='templates')
 
+# These are called 'pluggable views'. Read about them here: http://flask.pocoo.org/docs/views/
 
 class ListView(MethodView):
     def get(self):

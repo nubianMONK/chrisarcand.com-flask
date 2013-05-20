@@ -33,18 +33,18 @@ class Detail(MethodView):
 
         if slug:
             post = Post.objects.get_or_404(slug=slug)
-            # Handle old post types as well
+            # Handle old posts types as well
             cls = post.__class__ if post.__class__ != Post else BlogPost
-            form_cls = model_form(cls, exclude=('created_at', 'comments'))
+            form_cls = model_form(cls,  exclude=('created_at', 'comments'))
             if request.method == 'POST':
                 form = form_cls(request.form, inital=post._data)
             else:
                 form = form_cls(obj=post)
         else:
-            #Dynamically determine which post type we need
+            # Determine which post type we need
             cls = self.class_map.get(request.args.get('type', 'post'))
             post = cls()
-            form_cls = model_form(cls, exclude('created_at', 'comments'))
+            form_cls = model_form(cls,  exclude=('created_at', 'comments'))
             form = form_cls(request.form)
         context = {
             "post": post,
@@ -71,6 +71,7 @@ class Detail(MethodView):
 
 
 # Register the urls
+# http://flask.pocoo.org/docs/api/#url-route-registrations
 admin.add_url_rule('/admin/', view_func=List.as_view('index'))
 admin.add_url_rule('/admin/create/', defaults={'slug': None}, view_func=Detail.as_view('create'))
 admin.add_url_rule('/admin/<slug>/', view_func=Detail.as_view('edit'))
