@@ -5,6 +5,8 @@ app = Flask(__name__)
 app.config["MONGODB_SETTINGS"] = {'DB': "chrisarcand-flask-site"}
 app.config["SECRET_KEY"] = "thisisasupersecretpassword1!"
 
+# MongoEngine is an Object-Document Mapper for using Python with MongoDB
+# http://docs.mongoengine.org/en/latest/apireference.html
 db = MongoEngine(app)
 
 def register_blueprints(app):

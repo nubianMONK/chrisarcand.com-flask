@@ -1,6 +1,10 @@
 from functools import wraps
 from flask import request, Response
 
+# Simple HTTP Basic Authentication. Because I care...
+# If you're here because you sniffed my password, make sure 
+# whatever you do is hilarious or I'll be really disappointed
+# having to restore from backup for nothing. 
 
 def check_auth(username, password):
     """This function is called to check if a username /

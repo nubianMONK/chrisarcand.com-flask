@@ -6,6 +6,10 @@ from flask.ext.mongoengine.wtf import model_form
 posts = Blueprint('posts', __name__, template_folder='templates')
 
 # These are called 'pluggable views'. Read about them here: http://flask.pocoo.org/docs/views/
+# Basically we have classes instead of just functions for views, similar to Django generic views.
+# flask.views.MethodView allows you to map different functions to different types of requests,
+# (get(self), post(self), etc) rather than use the methods attribute with an 'if' statement. 
+# That's obviously useful for RESTful APIs. 
 
 class ListView(MethodView):
     def get(self):
@@ -31,6 +35,9 @@ class DetailView(MethodView):
         return render_template('posts/detail.html', **context)
 
     def post(self, slug):
+        '''
+        Handles POST (the comment form on the detail view)
+        '''
         context = self.get_context(slug)
         form = context.get('form')
 
