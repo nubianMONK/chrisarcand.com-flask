@@ -18,6 +18,11 @@ class ListView(MethodView):
 
 
 class DetailView(MethodView):
+    # Dynamically create a form (to be passed to the _form macro) using
+    # flask.ext.mongoengine.wtf's model_form. It takes the Comment model (class)
+    # and creates the form for you. The template for this page will call
+    # render(form) which is the _forms Jinja2 macro, which in turn iterates
+    # through the fields of the form, displaying them and their error messages, etc.
     form = model_form(Comment, exclude=['created_at'])
 
     def get_context(self, slug):
