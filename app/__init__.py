@@ -1,13 +1,23 @@
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
+from flask_debugtoolbar import DebugToolbarExtension
+
 
 app = Flask(__name__)
+
+# MongoDB database name
 app.config["MONGODB_SETTINGS"] = {'DB': "chrisarcand-flask-site"}
+
+# set a 'SECRET_KEY' to enable the Flask session cookies
 app.config["SECRET_KEY"] = "thisisasupersecretpassword1!"
 
 # MongoEngine is an Object-Document Mapper for using Python with MongoDB
 # http://docs.mongoengine.org/en/latest/apireference.html
 db = MongoEngine(app)
+
+#Toolbar extension only shows when debug is on
+app.debug = True
+toolbar = DebugToolbarExtension(app)
 
 def register_blueprints(app):
     # Prevents circular imports
