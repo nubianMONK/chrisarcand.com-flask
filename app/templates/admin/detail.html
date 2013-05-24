@@ -13,8 +13,11 @@
   <form action="?{{ request.query_string }}" method="post">
     {{ forms.render(form) }}
     <div class="actions">
-      <input type="submit" class="btn primary" value="save">
+      <input type="submit" class="btn primary" name="action" value="save">
       <a href="{{ url_for("admin.index") }}" class="btn secondary">Cancel</a>
+      {% if edit %}
+        <input type="submit" class="btn primary" name="action" value="delete">
+      {% endif %}
     </div>
   </form>
 {% endblock %}

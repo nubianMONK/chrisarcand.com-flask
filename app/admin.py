@@ -71,10 +71,13 @@ class Detail(MethodView):
         context = self.get_context(slug)
         form = context.get('form')
 
-        if form.validate():
+        if form.validate() and request.form['action'] == 'save':
             post = context.get('post')
             form.populate_obj(post)
             post.save()
+        elif form.validate() and request.form['action'] == 'delete':
+            post = context.get('post')
+            post.delete()
 
             return redirect(url_for('admin.index'))
         return render_template('admin/detail.html', **context)
