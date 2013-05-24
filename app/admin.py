@@ -6,6 +6,16 @@ from flask.ext.mongoengine.wtf import model_form
 from app.auth import requires_auth
 from app.models import Post, BlogPost, Video, Image, Quote, Comment
 
+# Flask Blueprints are a little confusing reading Armin's documentation (Sorry, Armin)
+# Basically, blueprints allow abstraction of URLs and site operations by creating 
+# app-like/class-like functionality. For example, you can make a 'main_views.py' and
+# an 'admin_views.py' which specify their own blueprints with their own index()'s. The
+# blueprints all you to have the two indexes, which you can call by getting the URL with
+# url_for(admin.index) and url_for(main.index). You can also specify url_prefix which
+# allows you to treat all admin-related functions in a general sense (/index) but have
+# the /admin/index/ added automatically. Blueprints make large, complex apps easier to
+# manage. Neat. For more: http://flask.pocoo.org/docs/blueprints/
+
 admin = Blueprint('admin', __name__, template_folder='templates')
 
 
