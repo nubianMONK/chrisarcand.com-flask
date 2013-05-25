@@ -15,7 +15,7 @@
     <div class="actions">
       <input type="submit" class="btn primary" name="action" value="save">
       <a href="{{ url_for("admin.index") }}" class="btn secondary">Cancel</a>
-      {% if edit %}
+      {% if not create %}
         <input type="submit" class="btn primary" name="action" value="delete">
       {% endif %}
     </div>
