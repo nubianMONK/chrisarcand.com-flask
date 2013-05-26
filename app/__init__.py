@@ -21,10 +21,12 @@ toolbar = DebugToolbarExtension(app)
 
 def register_blueprints(app):
     # Prevents circular imports
-    from app.views import posts
+    from app.blog import posts
     from app.admin import admin
+    from app.index import index
     app.register_blueprint(posts)
     app.register_blueprint(admin)
+    app.register_blueprint(index)
 
 register_blueprints(app)
 

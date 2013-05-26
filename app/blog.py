@@ -60,6 +60,8 @@ class DetailView(MethodView):
         return render_template('posts/detail.html', **context)
 
 # Register the urls
-posts.add_url_rule('/', view_func=ListView.as_view('list'))
-posts.add_url_rule('/<slug>/', view_func=DetailView.as_view('detail'))
+# TODO: the posts blueprint should have /blog/ set as a prefix so these URL's 
+# can be relative to it for modularity. 
+posts.add_url_rule('/blog', view_func=ListView.as_view('list'))
+posts.add_url_rule('/blog/<slug>/', view_func=DetailView.as_view('detail'))
 
