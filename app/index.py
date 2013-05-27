@@ -4,4 +4,4 @@ index = Blueprint('index', __name__, template_folder='templates')
 
 @index.route("/")
 def home():
-	return render_template('main.html')
+	return render_template('base.html')
