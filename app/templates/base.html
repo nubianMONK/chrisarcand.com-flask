@@ -11,23 +11,24 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div id="nav-container" class="span2">
-          <!--Sidebar content-->
-          <ul class="nav" data-spy="affix">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Me</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/resume">Resume</a></li>
-            <li><a href="/contact">Contact Me</a></li>
-          </ul>
-        </div>
-        <div class="span10">
-          <!--Body content-->
-          {% block content %}{% endblock %}
-        </div>
+    <div id="site-wrapper">
+      <div id="sidebar">
+        <!--Sidebar content-->
+          <div id="nav-container">
+            <img src="/static/img/avatar3.jpg" id="avatar" class="img-polaroid img-circle" />
+            <ul id="nav" class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Me</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/resume">Resume</a></li>
+              <li><a href="/contact">Contact Me</a></li>
+            </ul>
+          </div>
+      </div>
+      <div id="content-wrapper">
+        <!--Body content-->
+        {% block content %}{% endblock %}
       </div>
     </div>
   </body>

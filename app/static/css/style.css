@@ -1,6 +1,68 @@
 /* ChrisArcand.com stylesheet */
 
-.nav.affix {
+body {
+
+}
+
+#site-wrapper {
+
+}
+
+#content-wrapper {
+    bottom: 0;
+    left: 30%;
+    outline: 0 none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: auto;
+}
+
+#sidebar {
+    height: 100%;
+    left: 0;
+    max-width: 500px;
+    position: absolute;
+    top: 0;
+    width: 30%;
+    z-index: 100;
+    display: table;
+}
+
+#nav-container {
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+#nav {
+}
+
+#avatar {
+	height:100px;
+	width:100px;
+}
+
+#coverthingy {
+	background-image: url('/static/img/avatar3.jpg');
+	background-position: center center;
+    background-size: cover;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.3) inset;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* Bootstrap override classes */
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+	background-color: blue;
+}
+
+.affix {
 	top: 20px;
 	left: 20px;
 }
