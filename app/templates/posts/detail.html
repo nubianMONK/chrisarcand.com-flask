@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% import "_forms.html" as forms %}
 
+{% block cover_img %}
+  <div class="cover-img" style="background-image: url('/static/img/cover1.jpg');"></div>
+{% endblock %}
+
 {% block content %}
   <div class="page-header">
     <h1>{{ post.title }}</h1>
