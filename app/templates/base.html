@@ -14,8 +14,14 @@
     <div id="site-wrapper">
       <div id="sidebar">
         <!--Sidebar content-->
+        <div id="cover-img-row">
+          <div class="cover-img" style="background-image: url('/static/img/cover1.jpg');"></div>
+        </div>
+        <div id="nav-container-row">
           <div id="nav-container">
-            <a href="/"><img src="/static/img/avatar2.jpg" id="avatar" class="img-polaroid img-circle" /></a>
+            <span id="avatar-wrapper">
+              <a href="/"><img src="/static/img/avatar2.jpg" id="avatar" /></a>
+            </span>
             <h2 class="sidebar-title">Chris Arcand</h2>
             <p class="sidebar-tagline muted">Web Developer &amp; Orchestral Clarinetist</p>
             <ul id="nav" class="nav">
@@ -27,6 +33,7 @@
               <li><a class="brackets" href="/contact">Contact Me</a></li>
             </ul>
           </div>
+        </div>
       </div>
       <div id="content-wrapper">
         <!--Body content-->
