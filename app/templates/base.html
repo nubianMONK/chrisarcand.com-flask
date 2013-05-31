@@ -6,20 +6,8 @@
     <link href="/static/bootstrap2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/static/bootstrap2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
-    <script src="/static/js/frontend.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
     <script src="/static/bootstrap2.3.2/js/bootstrap.min.js"></script>
-
-    <!--Script for current page styling in nav-->
-    <script>
-        var url = window.location;
-        $("#nav a").each(function() {
-        if($(this).attr('href') == url){
-          $(this).addClass('current-menu');
-        }
-      });
-    </script>
-
   </head>
 
   <body>
@@ -43,9 +31,15 @@
       <div id="content-wrapper">
         <!--Body content-->
         <div id="content-wrapper-inner">
+          <div id="content-container">
           {% block content %}{% endblock %}
+          </div>
         </div>
       </div>
     </div>
+
+    <script>
+      $('#content-container').vAlign();  
+    </script>
   </body>
 </html>
