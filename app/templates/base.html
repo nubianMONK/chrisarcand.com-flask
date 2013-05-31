@@ -6,8 +6,20 @@
     <link href="/static/bootstrap2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/static/bootstrap2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
+    <script src="/static/js/frontend.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
     <script src="/static/bootstrap2.3.2/js/bootstrap.min.js"></script>
+
+    <!--Script for current page styling in nav-->
+    <script>
+        var url = window.location;
+        $("#nav a").each(function() {
+        if($(this).attr('href') == url){
+          $(this).addClass('current-menu');
+        }
+      });
+    </script>
+
   </head>
 
   <body>
@@ -15,20 +27,24 @@
       <div id="sidebar">
         <!--Sidebar content-->
           <div id="nav-container">
-            <img src="/static/img/avatar3.jpg" id="avatar" class="img-polaroid img-circle" />
+            <a href="/"><img src="/static/img/avatar2.jpg" id="avatar" class="img-polaroid img-circle" /></a>
+            <h2 class="sidebar-title">Chris Arcand</h2>
+            <p class="sidebar-tagline muted">Web Developer &amp; Orchestral Clarinetist</p>
             <ul id="nav" class="nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Me</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/resume">Resume</a></li>
-              <li><a href="/contact">Contact Me</a></li>
+              <li><a class="brackets" href="/">Home</a></li>
+              <li><a class="brackets" href="/about">About Me</a></li>
+              <li><a class="brackets" href="/blog">Blog</a></li>
+              <li><a class="brackets" href="/projects">Projects</a></li>
+              <li><a class="brackets" href="/resume">Resume</a></li>
+              <li><a class="brackets" href="/contact">Contact Me</a></li>
             </ul>
           </div>
       </div>
       <div id="content-wrapper">
         <!--Body content-->
-        {% block content %}{% endblock %}
+        <div id="content-wrapper-inner">
+          {% block content %}{% endblock %}
+        </div>
       </div>
     </div>
   </body>

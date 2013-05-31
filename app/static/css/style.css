@@ -1,7 +1,9 @@
 /* ChrisArcand.com stylesheet */
 
-body {
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300);
 
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 #site-wrapper {
@@ -10,7 +12,7 @@ body {
 
 #content-wrapper {
     bottom: 0;
-    left: 30%;
+    left: 25%;
     outline: 0 none;
     position: absolute;
     right: 0;
@@ -18,16 +20,38 @@ body {
     overflow: auto;
 }
 
+#content-wrapper-inner {
+	-moz-box-sizing: border-box;
+    max-width: 810px;
+    /* Padding for later 
+    padding: 50px 85px;*/
+    padding: 50px 0px 50px 0px;
+    width: 100%;
+}
+
 #sidebar {
     height: 100%;
     left: 0;
-    max-width: 500px;
+    /* Add 500px max-width later */
     position: absolute;
     top: 0;
-    width: 30%;
+    width: 25%;
     z-index: 100;
     display: table;
+    /* vertical border for later
+	box-shadow: -1px 0 0 rgba(0, 0, 0, 0.3) inset;*/
 }
+
+.sidebar-title {
+    margin-bottom: 0px;
+}
+
+.sidebar-tagline {
+    font-style: italic;
+}
+
+/* NAV MENU STYLES */
+/*=============================*/
 
 #nav-container {
 	text-align: center;
@@ -35,7 +59,46 @@ body {
 	display: table-cell;
 }
 
-#nav {
+#nav li a {
+	font-size: 18px;
+	color: #222222;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+}
+
+#nav li a:hover {
+	background-color: #FFF;
+}
+
+#nav a:after, #nav a:before {
+    transition: all 0.5s ease 0s;
+}
+
+#nav li a:active {
+    font-weight:700;
+}
+
+.brackets:before, .brackets:after {
+    color: transparent;
+    position: relative;
+}
+.brackets:hover:before, .brackets:hover:after {
+    color: #303030;
+}
+.brackets:before {
+    content: "{";
+    left: -20px;
+}
+.brackets:hover:before {
+    left: -10px;
+}
+.brackets:after {
+    content: "}";
+    right: -20px;
+}
+.brackets:hover:after {
+    right: -10px;
 }
 
 #avatar {
@@ -54,6 +117,16 @@ body {
     top: 0;
     width: 100%;
 }
+
+/*=============================*/
+/* FONTS AND TYPOGRAPHY */
+/*=============================*/
+#content-wrapper-inner p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
 
 /* Bootstrap override classes */
 .container-fluid {
