@@ -20,7 +20,7 @@
         <div id="nav-container-row">
           <div id="nav-container">
             <span id="avatar-wrapper">
-              <a href="/"><img src="/static/img/avatar2.jpg" id="avatar" /></a>
+              <a href="/"><img src="/static/img/avatar4.jpg" id="avatar" /></a>
             </span>
             <h2 class="sidebar-title">Chris Arcand</h2>
             <p class="sidebar-tagline muted">Web Developer &amp; Orchestral Clarinetist</p>
@@ -29,7 +29,7 @@
               <li><a class="brackets" href="/about">About Me</a></li>
               <li><a class="brackets" href="/blog">Blog</a></li>
               <li><a class="brackets" href="/projects">Projects</a></li>
-              <li><a class="brackets" href="/resume">Resume</a></li>
+              <li><a class="brackets" href="#resume-modal" data-toggle="modal">Resumé</a></li>
               <li><a class="brackets" href="/contact">Contact Me</a></li>
             </ul>
           </div>
@@ -44,9 +44,20 @@
         </div>
       </div>
     </div>
-
-    <script>
-      $('#content-container').vAlign();  
-    </script>
+     
+    <!-- Modal -->
+    <div id="resume-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="resume-modal-label">My resumé, eh?</h3>
+    </div>
+    <div class="modal-body">
+    <p>I would love to show you my resumé! I'm afraid I'll need to know a little more about you, however, before I share anything beyond the extensive information already found on this site. </p>
+      <p>Please request my resumé by filling out the following short form, and I'll email you directly. </p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+    </div>
   </body>
 </html>
