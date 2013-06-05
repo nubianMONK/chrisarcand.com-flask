@@ -1,4 +1,5 @@
 from flask import Blueprint, request, redirect, render_template, url_for
+from app.forms import ContactForm
 
 index = Blueprint('index', __name__, template_folder='templates')
 
@@ -18,6 +19,10 @@ def projects():
 def resume():
 	return render_template('content/resume.html')
 
-@index.route("/contact")
+
+@index.route("/contact", methods=("GET", "POST"))
 def contact():
-	return render_template('content/contact.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        return redirect(url_for("index.home"))
+    return render_template("content/contact.html", form=form)

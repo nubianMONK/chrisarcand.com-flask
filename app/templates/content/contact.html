@@ -1,9 +1,13 @@
 {% extends "base.html" %}
+{% import "_forms.html" as forms %}
 
 {% block cover_img %}
 	<div class="cover-img" style="background-image: url('/static/img/cover4.jpg');"></div>
 {% endblock %}
 
 {% block content %}
-contact.html
+	<form id="contact-form" method="POST" action="/contact">
+	    {{ forms.render(form) }}
+	  <input type="submit" value="Send">
+	</form>
 {% endblock %}

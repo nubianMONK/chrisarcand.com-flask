@@ -150,17 +150,6 @@ body {
     z-index: 500;
 }
 
-#coverthingy {
-	background-image: url('/static/img/avatar3.jpg');
-	background-position: center center;
-    background-size: cover;
-    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.3) inset;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
 /*=============================*/
 /* FONTS AND TYPOGRAPHY */
