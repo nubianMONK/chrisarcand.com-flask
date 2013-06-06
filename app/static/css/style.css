@@ -150,6 +150,14 @@ body {
     z-index: 500;
 }
 
+.twitter-timeline {
+    float: right;
+}
+
+#recent-posts-container {
+    float: left;
+}
+
 
 /*=============================*/
 /* FONTS AND TYPOGRAPHY */

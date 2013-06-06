@@ -6,21 +6,27 @@
 
 {% block content %}
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. 
+I'm a Twin Cities-based software engineer currently finishing my B.S. in computer science from the University of Minnesota, specializing in software and data systems development. I’m especially interested in robust web applications and Internet-enabled systems. I'll be graduating at the end of Fall 2013. 
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. 
+<p style="margin-bottom: 30px;">
+I'm also a semi-professional orchestral clarinetist who performs around the area. I graduated with a B.M. in music performance from the University of Minnesota, where I studied with Burt Hara. I teach a private studio of students in the northeast metro and occasionally hold master classes for the clarinetists of White Bear Lake High School's wind ensembles.
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. 
-</p>
+
+<div id="recent-posts-container">
+	<h4 style="margin-top:0px;" class="muted">LATEST POSTS</h4>
+	{% for post in posts %}
+		<h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h2>
+		<p>{{ post.body|truncate(100) }}</p>
+		<p>
+		{{ post.created_at.strftime('%H:%M %Y-%m-%d') }} |
+		{% with total=post.comments|length %}
+		    {{ total }} comment {%- if total > 1 %}s{%- endif -%}
+		{% endwith %}
+		</p>
+	{% endfor %}
+</div>
+
+<a class="twitter-timeline"  href="https://twitter.com/chrisarcand"  data-widget-id="342466895825473536" width="300">Tweets by @chrisarcand</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 {% endblock %}

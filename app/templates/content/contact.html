@@ -6,8 +6,21 @@
 {% endblock %}
 
 {% block content %}
+	{% if submitted %}
+	<div class="alert alert-success">
+		Message sent successfully
+	</div>
+	<p>Thanks! I'll get back to you as soon as I can.</p>
+	{% else %}
+	<h2 class="muted"><i>Pleased to meet you</i></h2>
+	<p>Your message will be emailed directly to me.</p>
+	<p style="font-size: 12px;"><i>Note: If you're a student interested in studying with me, please tell me a little bit about yourself and past playing experience.</i></p>
 	<form id="contact-form" method="POST" action="/contact">
 	    {{ forms.render(form) }}
-	  <input type="submit" value="Send">
+	    <div class="form-actions">
+    		<button type="submit" class="btn btn-primary">Send Message</button>
+    		<a href="/"><button type="button" class="btn">Cancel</button></a>
+    	</div>
 	</form>
+	{% endif %}
 {% endblock %}

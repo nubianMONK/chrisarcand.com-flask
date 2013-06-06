@@ -4,11 +4,13 @@
 {% if field.type in ['CSRFTokenField', 'HiddenField'] %}
   {{ field() }}
 {% else %}
-  <div class="clearfix {% if field.errors %}error{% endif %}">
+  <div class="clearfix {% if field.errors %}control-group error{% endif %}">
     {{ field.label }}
     <div class="input">
       {% if field.name == "body" %}
         {{ field(rows=10, cols=20) }}
+      {% elif field.name =="email" %}
+        {{field(placeholder="someone@somewhere.com")}}
       {% else %}
         {{ field() }}
       {% endif %}
