@@ -174,6 +174,51 @@ body {
     line-height: 16px;
 }
 
+/*=============================*/
+/* RESPONSIVE LAYOUT CHANGES */
+/*=============================*/
+@media (max-width: 1000px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .cover-img {
+        height: 350px;
+    }
+
+    #sidebar {
+        left: 0;
+        max-width: none;
+        position: relative;
+        top: 0;
+        display: table;
+
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    #content-wrapper {
+        bottom: auto;
+        left: auto;
+        outline: 0 none;
+        overflow: auto;
+        position: relative;
+        right: auto;
+        top: auto;
+    }
+
+    #content-wrapper-inner {
+        padding: 10px 85px 50px 85px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cover-img {
+        height: 240px;
+    }
+}
 
 
 /* Bootstrap override classes */
