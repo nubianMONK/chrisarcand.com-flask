@@ -22,6 +22,7 @@ body {
 
 #content-wrapper-inner {
 	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     max-width: 810px;
     padding: 50px 85px;
     width: 100%;
@@ -156,6 +157,7 @@ body {
 
 #recent-posts-container {
     float: left;
+    width: 50%;
 }
 
 
@@ -165,6 +167,11 @@ body {
 #content-wrapper-inner p {
     font-size: 16px;
     line-height: 24px;
+}
+
+#recent-posts-container .smallfont {
+    font-size:14px;
+    line-height: 16px;
 }
 
 

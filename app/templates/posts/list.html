@@ -6,13 +6,14 @@
 
 {% block content %}
     {% for post in posts %}
-      <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h2>
-      <p>{{ post.body|truncate(100) }}</p>
+      <h3><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h3>
+      <p>{{ post.body|truncate(275) }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">Read more</a></p>
       <p>
         {{ post.created_at.strftime('%H:%M %Y-%m-%d') }} |
         {% with total=post.comments|length %}
-            {{ total }} comment {%- if total > 1 %}s{%- endif -%}
+            <a href="{{ url_for('posts.detail', slug=post.slug) }}#comments">{{ total }} comment {%- if total > 1 %}s {% elif total ==0 %}s {%- endif -%}</a>
         {% endwith %}
       </p>
+      <hr />
     {% endfor %}
 {% endblock %}
