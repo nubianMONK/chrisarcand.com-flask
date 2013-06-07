@@ -33,6 +33,7 @@ body {
 #content-container {
     display: table-cell;
     vertical-align: middle;
+    position:relative;
 }
 
 #sidebar {
@@ -153,11 +154,14 @@ body {
 
 .twitter-timeline {
     float: right;
+    position: relative;
+    width: 49%;
 }
 
 #recent-posts-container {
     float: left;
     width: 50%;
+    margin-right: 1%;
 }
 
 
@@ -177,7 +181,7 @@ body {
 /*=============================*/
 /* RESPONSIVE LAYOUT CHANGES */
 /*=============================*/
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
     body {
         padding-left: 0px;
         padding-right: 0px;
@@ -210,13 +214,29 @@ body {
     }
 
     #content-wrapper-inner {
-        padding: 10px 85px 50px 85px;
+        padding: 0px 40px 20px 40px;
+        margin-right:auto;
+        margin-left: auto;
     }
 }
 
 @media (max-width: 500px) {
     .cover-img {
         height: 240px;
+    }
+
+    #content-wrapper-inner {
+        padding: 20px;
+    }
+
+    #recent-posts-container {
+        clear:both;
+        width:100%;
+    }
+
+    .twitter-timeline {
+        clear:both;
+        width: 100%;
     }
 }
 
