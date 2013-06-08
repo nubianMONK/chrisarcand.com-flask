@@ -5,5 +5,90 @@
 {% endblock %}
 
 {% block content %}
-projects
+	<div class="project-container-outer shadow">
+		<div class="project-container-inner">
+			<h4>UMN Classroom Finder</h4>
+			<div class="project-tb-container shadow pull-right">
+				<a class="fancybox" rel="group" href="/static/img/projects/scraper.png">
+					<img src="/static/img/projects/scraper_tb.png" alt="" />
+				</a>
+			</div>
+			<p>
+				In February 2013 I worked with some computer science colleagues from the UofM to create a 'classroom finder' web application. It searched a database we filled every hour for any unscheduled classrooms on campus and presented the information in a sorted, meaningful way. Built mostly in Python, we used the Beautiful Soup library to scrape the University's classroom management site for classroom schedules, placed them in a SQLite database, and presented sorted information in a Flask frontend designed for mobile devices so you could whip out your smartphone on campus and find a place to study on the go. The result was a quick and easy way to find classrooms to get away from the <i>very</i> busy study commons, unlike the U's classroom management site which was clunky and didn't have a very good way to
+				browse for open classrooms. 
+				<br><br>
+				It worked quite well. Unfortunately, on 5/20/13 the University retired their R25 scheduling system for a new one called Astra, and so the application is currently inoperable as it hasn't been developed yet to scrape the new system properly. 
+				<br><br>
+				The project is headed by my good friend <a href="http://www.brdyorn.com" target="_blank">Brady Ouren</a>, and is hosted on his site <a href="http://brontasaur.us" target="_blank">brontasaur.us</a>. You can read more about the specifics of how we built it on <a href="http://www.brdyorn.com/post/classroom-scraper" target="_blank">his blog post about the subject</a>. 
+			</p>
+			<a href="https://github.com/ChrisArcand/classroom_finder" class="github-link" target="_blank">See this project on GitHub</a>
+		</div>
+	</div>
+
+	<div class="project-container-outer shadow">
+		<div class="project-container-inner">
+			<h4>ChrisArcand.com (this site)</h4>
+			<div class="project-tb-container shadow pull-right">
+				<a class="fancybox" rel="group" href="/static/img/projects/site.png">
+					<img src="/static/img/projects/site_tb.png" alt="" />
+				</a>
+			</div>
+			<p>
+				A continuous project for me, this site is now on its fourth, most complex and largest iteration and marks the first
+				time I've ventured into a web framework built on Python. I wrote it with the intention to learn technologies I had 
+				never used before and to force myself to personally implement all the goodies of a modern blog rather than just set 
+				up another boring pre-built CMS or static files as I had in the three previous versions. It has been very rewarding
+				getting in-depth with Python and JavaScript.
+				<br><br>
+				This project also gave me an opportunity to dig into modern HTML5 and CSS3 design, as my knowledge on the 
+				subjects was outdated by a few years. Specifically, I learned a great deal about how to implement the increasingly 
+				important Responsive Web Design approach. Although it is used rather minimally on the site, (hardly at all for the responsive part, 
+				even) it was also the first time I tried using some of the Bootstrap framework and it gave me a good excuse to get more familiar with 
+				JQuery.
+				<br><br>
+				It uses the Flask microframework with Jinja2, mongoDB (NoSQL), and a whole bunch of respective Python libraries (MongoEngine, WTForms, etc). More features and fun things will be added as time goes on. <a  href="/contact">Let me know what you think of it.</a> 
+			</p>
+			<a href="https://github.com/ChrisArcand/chrisarcand.com" class="github-link" target="_blank">See this project on GitHub</a>
+		</div>
+	</div>
+
+	<div class="project-container-outer shadow">
+		<div class="project-container-inner">
+			<h4>'KIX' to C++ Language Translator</h4>
+			<div class="project-tb-container shadow pull-right">
+				<a class="fancybox" rel="group" href="/static/img/projects/3081w_project.png">
+					<img src="/static/img/projects/3081w_project_tb.png" alt="" />
+				</a>
+			</div>
+			<p>
+				I implemented a language translator in a semester long project for my CSCI3081W class in Spring 2012 at the University of Minnesota.
+				The complexity and sheer amount of work (many thousands of lines of code) makes it stand out as one of the more prominent projects that
+				I completed at the U. 
+				<br><br>
+				Written entirely in C++, the command line application takes code written in .KIX (a fictional, functional-like coding language) and
+				returns the equivalent form in C++. It has a substantial number of unit tests using CxxTest and one of the requirements for the 
+				assignment was to write organized, consistently-formatted code across the entire project. It is built in five different modules:
+				<ul>
+					<li><b>The scanner</b>, which identifies tokens in the KIX language using regular expressions.</li>
+					<li><b>The parser</b>, an implementation of a recursive descent parser with operator precedence by Eric Van Wyk which is based off of work in <a href="http://javascript.crockford.com/tdop/tdop.html" target="_blank">Douglas Crockford's "Top Down Operator Precedence", a chapter in the book "Beautiful Code".</a></li>
+					<li><b>The AST constructor</b>, which builds an abstract syntax tree of defined C++ classes containing the parsed tokens. In essence,
+						the resulting AST is the raw, generic construction of the program in a form that can be ported to any language that supports the proper semantics.</li>
+					<li><b>The translator</b>, which finally uses the generic AST and outputs the proper C++ syntax.</li>
+				</ul>
+				It's a pretty neat project; you could write a different translator to port KIX (well, KIX admittedly is not as useful!) to any language
+				you want without rewriting a whole lot. And that's good - because you have to do some pretty crazy (read: ugly) stuff in C++ to make it do functional
+				programming like KIX does.
+			</p>
+			<span class="github-link muted"  style="text-decoration: line-through" target="_blank">See this project on GitHub</span><br>
+			As it is a school project which fulfills class requirements, I will not put the project on GitHub - but if you'd like to see it for an
+			example of my work, <a href="/contact">please let me know.</a>
+			</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".fancybox").fancybox();
+		});
+	</script>
 {% endblock %}
