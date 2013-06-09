@@ -4,12 +4,16 @@ from app.models import Post
 
 from smtplib import SMTP_SSL as SMTP 
 from email.mime.text import MIMEText
+from bs4 import BeautifulSoup
 
 index = Blueprint('index', __name__, template_folder='templates')
 
 @index.route("/")
 def home():
     posts = Post.objects.all()
+    for post in posts:
+        soup = BeautifulSoup(post.body)
+        post.more = soup.find('more')
     return render_template('content/index.html', posts=posts)
 
 @index.route("/about")
