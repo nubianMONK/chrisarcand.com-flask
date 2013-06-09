@@ -205,6 +205,10 @@ body {
 }
 
 
+.blog-title {
+    margin-bottom: 20px;
+}
+
 /*=============================*/
 /* FONTS AND TYPOGRAPHY */
 /*=============================*/
@@ -244,6 +248,7 @@ h3 {
 
     .cover-img {
         height: 350px;
+        box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3) inset;
     }
 
     #sidebar {
@@ -252,7 +257,6 @@ h3 {
         position: relative;
         top: 0;
         display: table;
-
         box-shadow: none;
         width: 100%;
         max-width: none;
@@ -272,6 +276,10 @@ h3 {
         padding: 0px 40px 20px 40px;
         margin-right:auto;
         margin-left: auto;
+    }
+
+    .blog-title h1 {
+        font-size:28px;
     }
 }
 
@@ -304,6 +312,10 @@ h3 {
     #content-wrapper-inner p {
         font-size: 14px;
         line-height: 16px;
+    }
+
+    .blog-title h1 {
+        font-size:22px;
     }
 }
 

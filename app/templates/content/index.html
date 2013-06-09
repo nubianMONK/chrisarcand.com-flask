@@ -16,9 +16,9 @@ I'm also a semi-professional orchestral <a href="/about#clarinetist">clarinetist
 	<h4 style="margin-top:0px;" class="muted">{ Latest Posts }</h4>
 	{% for post in posts %}
 		<h4><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h4>
-		<p class="std-font">{{ post.body|truncate(200) }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">Read more</a></p>
+		<p class="std-font">{{ post.body|truncate(300) }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">Read more</a></p>
 		<p class="std-font">
-		{{ post.created_at.strftime('%H:%M %Y-%m-%d') }} |
+		{{ post.created_at.strftime('%B %-d, %Y') }} |
 		{% with total=post.comments|length %}
 		    <a href="{{ url_for('posts.detail', slug=post.slug) }}#comments">{{ total }} comment {%- if total > 1 %}s {% elif total ==0 %}s {%- endif -%}</a>
 		{% endwith %}

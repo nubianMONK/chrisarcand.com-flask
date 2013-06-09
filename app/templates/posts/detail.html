@@ -6,19 +6,22 @@
 {% endblock %}
 
 {% block content %}
-  <div class="page-header">
+  <div class="blog-title">
     <h1>{{ post.title }}</h1>
+    <span style="font-weight: 700"><i>{{ post.created_at.strftime('%B %-d, %Y') }}</i></span>
   </div>
   <p class="blog-font">{{ post.body }}<p>
-  <p>{{ post.created_at.strftime('%H:%M %Y-%m-%d') }}</p>
   <hr>
-  <a id="comments"><h2>Comments</h2></a>
+  <a id="comments"></a>
+  <h2>Comments</h2>
   {% if post.comments %}
     {% for comment in post.comments %}
        <p>{{ comment.body }}</p>
        <p><strong>{{ comment.author }}</strong> <small>on {{ comment.created_at.strftime('%H:%M %Y-%m-%d') }}</small></p>
       {{ comment.text }}
     {% endfor %}
+  {% else %}
+    <p>There are no comments yet</p>
   {% endif %}
   <hr>
   <h2>Add a comment</h2>
