@@ -17,8 +17,9 @@
   {% if post.comments %}
     {% for comment in post.comments %}
        <p>{{ comment.body }}</p>
-       <p><strong>{{ comment.author }}</strong> <small>on {{ comment.created_at.strftime('%H:%M %Y-%m-%d') }}</small></p>
+       <p><small>By</small> <strong>{{ comment.author }}</strong> <small>on {{ post.created_at.strftime('%B %-d, %Y') }}</small></p>
       {{ comment.text }}
+      <hr />
     {% endfor %}
   {% else %}
     <p>There are no comments yet</p>
