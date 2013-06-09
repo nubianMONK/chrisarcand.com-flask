@@ -6,6 +6,7 @@ Jinja2==2.6
 Markdown==2.3.1
 WTForms==1.0.4
 Werkzeug==0.8.3
+beautifulsoup4==4.2.1
 blinker==1.2
 flask-mongoengine==0.7.0RC1
 itsdangerous==0.20
