@@ -3,6 +3,7 @@ from flask.views import MethodView
 from app.models import Post, Comment
 from flask.ext.mongoengine.wtf import model_form
 from markdown import markdown
+from bs4 import BeautifulSoup
 
 posts = Blueprint('posts', __name__, template_folder='templates')
 
@@ -15,6 +16,9 @@ posts = Blueprint('posts', __name__, template_folder='templates')
 class ListView(MethodView):
     def get(self):
         posts = Post.objects.all()
+        for post in posts:
+            soup = BeautifulSoup(post.body)
+            post.more = soup.find('more')
         return render_template('posts/list.html', posts=posts)
 
 
@@ -29,10 +33,12 @@ class DetailView(MethodView):
     def get_context(self, slug):
         post = Post.objects.get_or_404(slug=slug)
         form = self.form(request.form)
+        markup = Markup(markdown(post.body))
 
         context = {
             "post": post,
-            "form": form
+            "form": form,
+            "markup": markup
         }
         return context
 

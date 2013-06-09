@@ -7,7 +7,9 @@
 {% block content %}
     {% for post in posts %}
       <h3><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h3>
-      <p>{{ post.body|truncate(350) }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">Read more</a></p>
+      {% if post.more %}
+      <p>{{ post.more|striptags }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">...Read more</a></p>
+      {% endif %}
       <p>
         {{ post.created_at.strftime('%B %-d, %Y') }} |
         {% with total=post.comments|length %}
