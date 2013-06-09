@@ -6,14 +6,14 @@
 
 {% block content %}
 <p class="blog-font">
-I'm a Twin Cities-based software engineer currently finishing my B.S. in computer science from the University of Minnesota, specializing in software and data systems development. I’m especially interested in robust web applications and Internet-enabled systems. I'll be graduating at the end of Fall 2013. 
+I'm a Twin Cities-based <a href="/about#softwareengineer">software engineer</a> currently finishing my B.S. in computer science from the University of Minnesota, specializing in software and data systems development. I’m especially interested in robust web applications and Internet-enabled systems and will be graduating at the end of Fall 2013. 
 </p>
 <p class="blog-font" style="margin-bottom: 30px;">
-I'm also a semi-professional orchestral clarinetist who performs around the area. I graduated with a B.M. in music performance from the University of Minnesota, where I studied with Burt Hara. I teach a private studio of students in the northeast metro and occasionally hold master classes for the clarinetists of White Bear Lake High School's wind ensembles.
+I'm also a semi-professional orchestral <a href="/about#clarinetist">clarinetist</a> who performs around the area. I teach a private studio of students in the northeast metro and occasionally hold master classes for the clarinetists of White Bear Lake High School's wind ensembles. I graduated with a B.M. in music performance from the University of Minnesota, where I studied with Burt Hara.
 </p>
 
 <div id="recent-posts-container" style="50%">
-	<h4 style="margin-top:0px;" class="muted">LATEST POSTS</h4>
+	<h4 style="margin-top:0px;" class="muted">{ Latest Posts }</h4>
 	{% for post in posts %}
 		<h4><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a></h4>
 		<p class="std-font">{{ post.body|truncate(200) }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">Read more</a></p>
@@ -29,6 +29,19 @@ I'm also a semi-professional orchestral clarinetist who performs around the area
 
 <a class="twitter-timeline"  href="https://twitter.com/chrisarcand"  data-widget-id="290924863433089024">Tweets by @chrisarcand</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div id="links-container-outer">
+	<h4 style="margin=top:0px;" class="muted">{ Links }</h4>
+	<p>
+		Nodus, Incorporated<br>
+		<a href="http://www.nodusinc.net" target="_blank">www.nodusinc.net</a>
+		<br><br>
+		My friend and colleague Brady Ouren's personal website<br>
+		<a href="http://www.brdyorn.com" target="_blank">www.brdyorn.com</a>
+		<br><br>
+		<a href="http://xkcd.com/979/" target="_blank">Something special</a>
+	</p>
+</div>
 
 
 {% endblock %}
