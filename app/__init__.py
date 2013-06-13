@@ -1,9 +1,20 @@
+import os
+import sys
+
+#Set the path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 from flask_debugtoolbar import DebugToolbarExtension
 
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
+
+# Rewrite headers like REMOTE_ADDR and HTTP_HOST so Flask can work with an HTTP proxy (nginx)
+# Werkzeug ships a fixer that solves most common setups
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 # MongoDB database name
 app.config["MONGODB_SETTINGS"] = {'DB': "chrisarcand-flask-site"}
@@ -32,3 +43,4 @@ register_blueprints(app)
 
 if __name__ == '__main__':
     app.run()
+
