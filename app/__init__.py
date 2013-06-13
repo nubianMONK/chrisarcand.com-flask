@@ -20,7 +20,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 app.config["MONGODB_SETTINGS"] = {'DB': "chrisarcand-flask-site"}
 
 # set a 'SECRET_KEY' to enable the Flask session cookies
-app.config["SECRET_KEY"] = "thisisasupersecretpassword1!"
+app.config["SECRET_KEY"] = "thisISmysuper$%#@secretkey"
 
 # MongoEngine is an Object-Document Mapper for using Python with MongoDB
 # http://docs.mongoengine.org/en/latest/apireference.html

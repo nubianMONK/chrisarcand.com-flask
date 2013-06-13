@@ -298,12 +298,7 @@ h3 {
 
     .blog-title h1 {
         font-size:28px;
-    }
-
-    #resume-modal {
-        margin-left: -200px;
-        width: 410px;
-    }   
+    }  
 
     #recent-posts-container {
         min-height: 10px;
@@ -344,11 +339,6 @@ h3 {
 
     .blog-title h1 {
         font-size:22px;
-    }
-
-    #resume-modal {
-        margin-left: -120px;
-        width: 250px;
     }
 
     #recent-posts-container {
