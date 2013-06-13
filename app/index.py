@@ -4,6 +4,7 @@ from app.models import Post
 
 from smtplib import SMTP_SSL as SMTP 
 from email.mime.text import MIMEText
+from subprocess import Popen, PIPE
 from bs4 import BeautifulSoup
 
 index = Blueprint('index', __name__, template_folder='templates')
@@ -33,18 +34,19 @@ def resume():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
+        # Yes, I know this really isn't secure at all, but whatever, for now. 
+        # Please don't hack my server and make me spend 20 minutes restoring from backup.
+        # That would be irritating.
     	name = form.name.data
     	email = form.email.data
     	phone = form.phone.data
     	msg = MIMEText(form.body.data)
 
-    	msg['Subject'] = 'New message from ChrisArcand.com'
-    	msg['From'] = email
-    	# I should totally be using an external config file here, I know. Too lazy, for now...
-    	msg['To'] = 'chris@chrisarcand.com'
-
-    	#SMTP SENDER CODE HERE, WILL BE SPECIFIC TO VPS
-    	# Make sure you check to make sure the message sent successfully, else warn the user it failed
+        msg["From"] = email
+        msg["To"] = "chris@chrisarcand.com"
+        msg["Subject"] = "NEW EMAIL FROM CHRISARCAND.COM"
+        p = Popen(["/usr/sbin/sendmail", "-t"], stdin=PIPE)
+        p.communicate(msg.as_string())
 
         return render_template("content/contact.html", submitted=True)
     return render_template("content/contact.html", form=form)
