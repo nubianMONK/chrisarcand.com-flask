@@ -27,7 +27,7 @@ app.config["SECRET_KEY"] = "thisisasupersecretpassword1!"
 db = MongoEngine(app)
 
 #Toolbar extension only shows when debug is on
-app.debug = True
+app.debug = False
 toolbar = DebugToolbarExtension(app)
 
 def register_blueprints(app):
