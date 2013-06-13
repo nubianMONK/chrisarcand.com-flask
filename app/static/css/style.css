@@ -190,6 +190,8 @@ body {
 .project-tb-container {
     margin-left: 10px;
     margin-bottom: 5px;
+    float: right;
+    width: 200px;
 }
 
 .shadow {
@@ -236,6 +238,21 @@ h3 {
 
 .title-hr {
     margin-top:0px;
+}
+
+/* Genericon cascades from genericons.css */
+.genericon-sidebar {
+    height: 32px;
+    width: 32px;
+    font-size: 32px;
+    color: #333333;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s; /* Safari */
+    text-decoration: none;
+}
+
+.genericon-sidebar:hover {
+    color: #0088CC;
 }
 
 /*=============================*/
@@ -288,6 +305,10 @@ h3 {
         width: 410px;
     }   
 
+    #recent-posts-container {
+        min-height: 10px;
+    }
+
 }
 
 @media (max-width: 500px) {
@@ -317,8 +338,8 @@ h3 {
     }
 
     #content-wrapper-inner p {
-        font-size: 14px;
-        line-height: 16px;
+        font-size: 16px;
+        line-height: 18px;
     }
 
     .blog-title h1 {
@@ -329,21 +350,30 @@ h3 {
         margin-left: -120px;
         width: 250px;
     }
-}
 
-/* Genericon cascades from genericons.css */
-.genericon-sidebar {
-    height: 32px;
-    width: 32px;
-    font-size: 32px;
-    color: #333333;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s; /* Safari */
-    text-decoration: none;
-}
+    #recent-posts-container {
+        min-height: 10px;
+    }
 
-.genericon-sidebar:hover {
-    color: #0088CC;
+    .project-tb-container {
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    #nav li a {
+        font-size: 26px;
+        line-height: 28px; 
+    }
+
+    .genericon-sidebar {
+        height: 48px;
+        width: 48px;
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size:26px;
+    }
 }
 
 
