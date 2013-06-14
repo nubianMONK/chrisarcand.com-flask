@@ -40,7 +40,7 @@ def contact():
     	name = form.name.data
     	email = form.email.data
     	phone = form.phone.data
-    	msg = MIMEText(form.body.data)
+    	msg = MIMEText('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n' + form.body.data)
 
         msg["From"] = email
         msg["To"] = "chris@chrisarcand.com"
