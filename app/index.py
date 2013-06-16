@@ -27,7 +27,7 @@ def projects():
 
 @index.route("/resume")
 def resume():
-	return render_template('content/resume.html')
+	return redirect("/static/docs/cpa_resume_web.pdf")
 
 
 @index.route("/contact", methods=("GET", "POST"))
