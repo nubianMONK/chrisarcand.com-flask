@@ -4,7 +4,21 @@
     <meta charset="utf-8">
     <title>My Tumblelog</title>
     <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.css" rel="stylesheet">
-    <style>.content {padding-top: 80px;}</style>
+    <style>
+      .content {padding-top: 80px;}
+      .mce-fullscreen .topbar {display:none;}
+    </style>
+
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector:'textarea',
+        plugins: "link, image, code, hr, fullscreen, visualblocks",
+        image_advtab: true,
+        extended_valid_elements : "more"
+      });
+    </script>
+
   </head>
 
   <body>

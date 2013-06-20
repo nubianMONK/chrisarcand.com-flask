@@ -33,7 +33,7 @@ class DetailView(MethodView):
     def get_context(self, slug):
         post = Post.objects.get_or_404(slug=slug)
         form = self.form(request.form)
-        markup = Markup(markdown(post.body))
+        markup = Markup(post.body)
 
         context = {
             "post": post,

@@ -195,7 +195,8 @@ body {
     width: 200px;
 }
 
-.shadow {
+
+.shadow, #blog-body img {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -213,6 +214,16 @@ body {
     margin-bottom: 20px;
 }
 
+#blog-body img {
+    -moz-box-sizing: border-box;
+    background-color: #F2F2F0;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height:auto;
+    cursor: pointer;
+}
+
 /*=============================*/
 /* FONTS AND TYPOGRAPHY */
 /*=============================*/
@@ -223,9 +234,13 @@ body {
     /* This class is built in body{} too */
 }
 
-.blog-font {
+#blog-body p {
     font-size:16px;
     line-height: 24px;
+}
+
+#blog-body h2 {
+    margin-top: 20px;
 }
 
 .github-link {
@@ -360,7 +375,6 @@ h3 {
         font-size:26px;
     }
 }
-
 
 /* Bootstrap override classes */
 .nav {
