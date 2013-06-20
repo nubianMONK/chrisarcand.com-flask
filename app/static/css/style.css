@@ -234,7 +234,7 @@ body {
     /* This class is built in body{} too */
 }
 
-#blog-body p {
+#blog-body p, .blog-font {
     font-size:16px;
     line-height: 24px;
 }
