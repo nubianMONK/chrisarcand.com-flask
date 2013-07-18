@@ -9,6 +9,7 @@ class Post(db.Document):
     body = db.StringField(required=True)
     comments = db.ListField(db.EmbeddedDocumentField('Comment'))
     more = ""
+    published = db.BooleanField(default=False)
 
     def get_absolute_url(self):
         return url_for('post', kwargs={"slug": self.slug})

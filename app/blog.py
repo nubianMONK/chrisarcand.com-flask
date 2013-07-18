@@ -15,7 +15,7 @@ posts = Blueprint('posts', __name__, template_folder='templates')
 
 class ListView(MethodView):
     def get(self):
-        posts = Post.objects.all()
+        posts = Post.objects(published=True)
         for post in posts:
             soup = BeautifulSoup(post.body)
             post.more = soup.find('more')

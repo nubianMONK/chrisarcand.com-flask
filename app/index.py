@@ -11,7 +11,7 @@ index = Blueprint('index', __name__, template_folder='templates')
 
 @index.route("/")
 def home():
-    posts = Post.objects.all()
+    posts = Post.objects(published=True)
     for post in posts:
         soup = BeautifulSoup(post.body)
         post.more = soup.find('more')
