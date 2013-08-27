@@ -142,6 +142,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 2px;
+    border-radius: 50%;
 }
 
 #avatar-wrapper {
@@ -314,7 +315,7 @@ h3 {
 
     .blog-title h1 {
         font-size:28px;
-    }  
+    }
 
     #recent-posts-container {
         min-height: 10px;
@@ -368,7 +369,7 @@ h3 {
 
     #nav li a {
         font-size: 22px;
-        line-height: 24px; 
+        line-height: 24px;
     }
 
     h2 {
