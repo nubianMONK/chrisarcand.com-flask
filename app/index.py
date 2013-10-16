@@ -2,7 +2,7 @@ from flask import Blueprint, request, redirect, render_template, url_for
 from app.forms import ContactForm
 from app.models import Post
 
-from smtplib import SMTP_SSL as SMTP 
+from smtplib import SMTP_SSL as SMTP
 from email.mime.text import MIMEText
 from subprocess import Popen, PIPE
 from bs4 import BeautifulSoup
@@ -34,19 +34,19 @@ def resume():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
-        # Yes, I know this really isn't secure at all, but whatever, for now. 
+        # Yes, I know this really isn't secure at all, but whatever, for now.
         # Please don't hack my server and make me spend 20 minutes restoring from backup.
         # That would be irritating.
-    	name = form.name.data
-    	email = form.email.data
-    	phone = form.phone.data
-    	msg = MIMEText('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n' + form.body.data)
+    	# name = form.name.data
+    	# email = form.email.data
+    	# phone = form.phone.data
+    	# msg = MIMEText('Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n' + form.body.data)
 
-        msg["From"] = email
-        msg["To"] = "chris@chrisarcand.com"
-        msg["Subject"] = "NEW EMAIL FROM CHRISARCAND.COM"
-        p = Popen(["/usr/sbin/sendmail", "-t"], stdin=PIPE)
-        p.communicate(msg.as_string())
+     #    msg["From"] = email
+     #    msg["To"] = "chris@chrisarcand.com"
+     #    msg["Subject"] = "NEW EMAIL FROM CHRISARCAND.COM"
+     #    p = Popen(["/usr/sbin/sendmail", "-t"], stdin=PIPE)
+     #    p.communicate(msg.as_string())
 
         return render_template("content/contact.html", submitted=True)
     return render_template("content/contact.html", form=form)
