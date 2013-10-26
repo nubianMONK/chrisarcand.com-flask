@@ -11,10 +11,10 @@
       <p>{{ post.more|striptags }} <a href="{{ url_for('posts.detail', slug=post.slug) }}">...Read more</a></p>
       {% endif %}
       <p>
-        {{ post.created_at.strftime('%B %-d, %Y') }} |
+        {{ post.created_at.strftime('%B %-d, %Y') }} <!-- |
         {% with total=post.comments|length %}
             <a href="{{ url_for('posts.detail', slug=post.slug) }}#comments">{{ total }} comment {%- if total > 1 %}s {% elif total ==0 %}s {%- endif -%}</a>
-        {% endwith %}
+        {% endwith %} -->
       </p>
       <hr />
     {% endfor %}
