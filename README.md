@@ -9,4 +9,5 @@ TBD: Instructions for running locally (if you're interested). For now, know that
 with all of the requirements in requirements.pip, along with a running instance of MongoDB. I use gunicorn in
 production but you can run Flask's development server locally by using <code>python manage.py runserver</code>
 (Make sure 'python' is the Python from your virtualenv...)
+<h2>2020©nubianMONK</h2>
 
